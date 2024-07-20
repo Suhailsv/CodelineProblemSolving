@@ -1,0 +1,29 @@
+while True:
+    inputValue = int(input(("Menu: \n1. Display a right-angle tringle of ones\n2. Display a Palindromic Tringle\n3. Help\n4. Exit\nEnter your choice: ")))
+    if inputValue > 4:
+        print("Invalid choice, try again")
+    elif inputValue == 3:
+        print('''Help: 
+A Palindronic Triangle is a trianguler array of numbers where each row forms a palindrone.
+The first few lines of Palindromic Triangle are: 
+1 
+11 
+121 
+12321 
+1234321 
+You can use this pattern to draw a Palindromic Triangle for any number of lines.  ''')
+    elif inputValue == 4:
+        print("Exiting the program.")
+        break
+    elif inputValue == 1:
+        numOfLines = int(input("Enter the number of lines: "))
+        for i in range(1, numOfLines+1):
+            print("1"*i)
+    elif inputValue == 2:
+        numOfLines = int(input("Enter the number of lines: "))
+        for i in range(1, numOfLines+1):
+            for j in range(1, i):
+              print(j, end="")
+            for j in range(i-2, 0, -1):
+              print(j, end="")
+            print()
