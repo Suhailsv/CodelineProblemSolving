@@ -1,0 +1,44 @@
+userName = input("Username:")
+password = input("Password:")
+email = input("Email:")
+
+userNameLen = len(userName)
+if userNameLen> 50 or userNameLen == 0:
+    print("Username is invalid")
+else:
+    print("Username is valid")
+
+passwordLen = len(password)
+cotainsUpper, containsLower, containsSpecialChar, containsDigit = False, False, False, False
+for i in password:
+    if i.isupper():
+        cotainsUpper = True
+    elif i.islower():
+        containsLower = True
+    elif i.isdigit():
+        containsDigit = True
+    else:
+        containsSpecialChar = True
+if passwordLen<8 or not cotainsUpper or not containsLower or not containsSpecialChar or not containsDigit:
+    print("Password is invalid")
+else:
+    print("Password is valid")
+
+
+isValidEmail = True
+if "@" in email:
+    count = email.count("@")
+    if count>1:
+        isValidEmail = False
+    else:
+        index = email.index("@")
+        dotIndex = email[index:].find(".")
+        emailLen = len(email)
+        if index == 0 or  index == emailLen-1 or dotIndex==-1 or dotIndex==emailLen-1 or dotIndex==index+1:
+            isValidEmail = False
+else:
+    isValidEmail = False
+if isValidEmail:
+    print("Email is valid")
+else:
+    print("Email is invalid")
