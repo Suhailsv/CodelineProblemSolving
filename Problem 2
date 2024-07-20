@@ -1,0 +1,14 @@
+decimal = 0
+while True:
+    decimal = int(input("Input: "))
+    if decimal>=0:
+        break
+    else:
+        print("Please enter a positive value.")
+
+binary = []
+while decimal:
+    rem = decimal%2
+    binary.insert(0, str(rem))
+    decimal//=2
+print("Output: " + ''.join(binary))
