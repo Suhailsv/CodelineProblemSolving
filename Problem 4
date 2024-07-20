@@ -1,0 +1,19 @@
+inputList = input("Enter the list of integers: ")
+listS = inputList[1:-1].split(",")
+
+for index, val in enumerate(listS):
+    listS[index] = int(val)
+
+request = int(input("Menu:\n1. for list of square even numbers\n2. to get the sublist\n"))
+if request == 1:
+    ans = []
+    for i in listS:
+        if i%2==0:
+            ans.append(i**2)
+    print("List of squares of even numbers: ", end ="")
+    print(ans)
+elif request == 2:
+    startIndex = int(input("Enter start index: "))
+    endIndex = int(input("Enter end index: "))
+    print("Sublist: ", end="")
+    print(listS[startIndex: endIndex])
